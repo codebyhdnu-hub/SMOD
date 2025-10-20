@@ -1,0 +1,548 @@
+
+Finetune:
+######################################## 
+Baseline CEall FT with KL # seed2 was selected 2 match avg
+
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'
+
+cd ../
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_CEallfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'
+
+cd ./HMDB-rgb-flow/
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_ash
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'  --use_ash
+cd ../
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_CEallfar_ash_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_CEallfar_ash_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_CEallfar_ash_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_CEallfar_ash_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+cd ./HMDB-rgb-flow/
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_react
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_CEallfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt'  --use_react
+cd ../
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_CEallfar_react_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_CEallfar_react_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_CEallfar_react_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_CEallfar_react_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+cd ./HMDB-rgb-flow/
+
+
+
+
+for seed in  0 1 2 3 4; do
+    echo "Running with seed $seed"
+
+    python SMOD_train_video_flow.py --dataset 'HMDB' --lr 0.0001 --seed $seed --bsz 16 --num_workers 8 --nepochs 10 --appen 'CEall_far_FT_decp_batchKL_' --save_best --save_checkpoint --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_baseCEall.pt' 
+
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'
+
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'CEall_far_FT_decp_batchKL_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'
+
+
+    cd ./HMDB-rgb-flow/
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_ash
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'  --use_ash
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'CEall_far_FT_decp_batchKL_ash_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'CEall_far_FT_decp_batchKL_ash_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'CEall_far_FT_decp_batchKL_ash_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'CEall_far_FT_decp_batchKL_ash_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+
+    cd ./HMDB-rgb-flow/
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_react
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'CEall_far_FT_decp_batchKL_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamCEall_far_FT_decp_batchKL_MLPstudent.pt'  --use_react
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'CEall_far_FT_decp_batchKL_react_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'CEall_far_FT_decp_batchKL_react_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'CEall_far_FT_decp_batchKL_react_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'CEall_far_FT_decp_batchKL_react_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    cd ./HMDB-rgb-flow/
+done
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_UCF_ebo'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_HAC_ebo'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Kinetics_ebo'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Epic_ebo'
+
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_UCF_msp'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_HAC_msp'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Kinetics_msp'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Epic_msp'
+
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_UCF_gen'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_HAC_gen'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Kinetics_gen'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Epic_gen'
+
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_UCF_maxlogit'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_HAC_maxlogit'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Kinetics_maxlogit'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Epic_maxlogit'
+
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_UCF_vim'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_HAC_vim'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Kinetics_vim'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_Epic_vim'
+
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_ash_UCF_ash'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_ash_HAC_ash'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_ash_Kinetics_ash'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_ash_Epic_ash'
+
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_react_UCF_react'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_react_HAC_react'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_react_Kinetics_react'
+python averagegen.py --appen 'CEall_far_FT_decp_batchKL_react_Epic_react'
+
+
+
+
+
+
+
+
+
+######################################## 
+A2DNPMIX FT with KL
+
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'
+
+cd ../
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2DNPMIXfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'
+
+cd ./HMDB-rgb-flow/
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_ash
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'  --use_ash
+cd ../
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2DNPMIXfar_ash_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2DNPMIXfar_ash_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2DNPMIXfar_ash_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2DNPMIXfar_ash_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+cd ./HMDB-rgb-flow/
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_react
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_A2DNPMIXfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt'  --use_react
+cd ../
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2DNPMIXfar_react_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2DNPMIXfar_react_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2DNPMIXfar_react_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2DNPMIXfar_react_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+cd ./HMDB-rgb-flow/
+
+
+
+
+
+
+
+for seed in  0 1 2 3 4; do
+    echo "Running with seed $seed"
+
+    python SMOD_train_video_flow.py --dataset 'HMDB' --lr 0.0001 --seed $seed --bsz 16 --num_workers 8 --nepochs 10 --appen 'A2DNPMIXfar_FT_batchKLdecp_' --save_best --save_checkpoint --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d_npmix.pt' 
+
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'
+
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2DNPMIXfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'
+
+
+    cd ./HMDB-rgb-flow/
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_ash
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'  --use_ash
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+
+    cd ./HMDB-rgb-flow/
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_react
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'A2DNPMIXfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2DNPMIXfar_FT_batchKLdecp_MLPstudent.pt'  --use_react
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2DNPMIXfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2DNPMIXfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2DNPMIXfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2DNPMIXfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    cd ./HMDB-rgb-flow/
+done
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_UCF_ebo'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_HAC_ebo'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Kinetics_ebo'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Epic_ebo'
+
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_UCF_msp'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_HAC_msp'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Kinetics_msp'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Epic_msp'
+
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_UCF_gen'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_HAC_gen'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Kinetics_gen'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Epic_gen'
+
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_UCF_maxlogit'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_HAC_maxlogit'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Kinetics_maxlogit'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Epic_maxlogit'
+
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_UCF_vim'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_HAC_vim'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Kinetics_vim'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_Epic_vim'
+
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_UCF_ash'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_HAC_ash'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_Kinetics_ash'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_ash_Epic_ash'
+
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_react_UCF_react'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_react_HAC_react'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_react_Kinetics_react'
+python averagegen.py --appen 'A2DNPMIXfar_FT_batchKLdecp_react_Epic_react'
+
+
+
+
+
+
+################################################################################ 
+A2D FT with KL
+
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'
+
+cd ../
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ebo --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor msp --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor gen --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'
+python eval_video_flow_far_ood.py --postprocessor vim --appen 'base_A2Dfar_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'
+
+cd ./HMDB-rgb-flow/
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_ash
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_ash
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'  --use_ash
+cd ../
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2Dfar_ash_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2Dfar_ash_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2Dfar_ash_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor ash --appen 'base_A2Dfar_ash_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+
+cd ./HMDB-rgb-flow/
+python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_react
+python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_react
+cd ../EPIC-rgb-flow/
+python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'EPIC' --appen 'base_A2Dfar_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt'  --use_react
+cd ../
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2Dfar_react_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2Dfar_react_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2Dfar_react_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+python eval_video_flow_far_ood.py --postprocessor react --appen 'base_A2Dfar_react_' --dataset 'HMDB' --ood_dataset 'EPIC' --path 'HMDB-rgb-flow/'
+
+cd ./HMDB-rgb-flow/
+
+
+
+
+
+
+
+for seed in  0 1 2 3 4; do
+    echo "Running with seed $seed"
+
+    python SMOD_train_video_flow.py --dataset 'HMDB' --lr 0.0001 --seed $seed --bsz 16 --num_workers 8 --nepochs 10 --appen 'A2Dfar_FT_batchKLdecp_' --save_best --save_checkpoint --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/HMDB_far_ood_a2d.pt' 
+
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'
+
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor msp --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ebo --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor maxlogit --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor gen --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'
+    python eval_video_flow_far_ood.py --postprocessor vim --appen 'A2Dfar_FT_batchKLdecp_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/' --resume_file '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'
+
+
+    cd ./HMDB-rgb-flow/
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_ash
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_ash
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'  --use_ash
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2Dfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2Dfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2Dfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor ash --appen 'A2Dfar_FT_batchKLdecp_ash_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+
+    cd ./HMDB-rgb-flow/
+    python test_video_flow.py --bsz 16 --num_workers 2 --dataset 'HMDB' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'UCF' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/UCF101/'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'HAC' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/HAC/'  --use_react
+    python test_video_flow.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Kinetics' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt' --datapath '/data/scratch/projects/punim1942/multiood_data/Kinetics-600/'  --use_react
+    cd ../EPIC-rgb-flow/
+    python test_video_flow_epic.py --bsz 16 --num_workers 2 --far_ood --dataset 'HMDB' --ood_dataset 'Epic' --appen 'A2Dfar_FT_batchKLdecp_' --resumef '/data/gpfs/projects/punim1942/SMOD/HMDB-rgb-flow/models/log_video_flow_HMDB_far_ood_lr_0.0001_bsz_16_10_adamA2Dfar_FT_batchKLdecp_MLPstudent.pt'  --use_react
+    cd ../
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2Dfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'UCF' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2Dfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'HAC' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2Dfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'Epic' --path 'HMDB-rgb-flow/'
+    python eval_video_flow_far_ood.py --postprocessor react --appen 'A2Dfar_FT_batchKLdecp_react_' --dataset 'HMDB' --ood_dataset 'Kinetics' --path 'HMDB-rgb-flow/'
+
+    cd ./HMDB-rgb-flow/
+done
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_UCF_ebo'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_HAC_ebo'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Kinetics_ebo'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Epic_ebo'
+
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_UCF_msp'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_HAC_msp'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Kinetics_msp'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Epic_msp'
+
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_UCF_gen'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_HAC_gen'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Kinetics_gen'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Epic_gen'
+
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_UCF_maxlogit'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_HAC_maxlogit'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Kinetics_maxlogit'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Epic_maxlogit'
+
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_UCF_vim'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_HAC_vim'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Kinetics_vim'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_Epic_vim'
+
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_ash_UCF_ash'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_ash_HAC_ash'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_ash_Kinetics_ash'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_ash_Epic_ash'
+
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_react_UCF_react'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_react_HAC_react'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_react_Kinetics_react'
+python averagegen.py --appen 'A2Dfar_FT_batchKLdecp_react_Epic_react'
+
+################################################################################ 
+
+
+
+
+
+
+
