@@ -16,7 +16,7 @@ You can find the dataset preparation details and download links in the official 
 
 ## Methodology
 <div style="text-align:left">
-<img src="imgs/smod.drawio.pdf"  width="80%" height="100%">
+<img src="imgs/smod.drawio.png"  width="80%" height="100%">
 </div>
 
 ---
